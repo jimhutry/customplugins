@@ -14,7 +14,6 @@ public class MainPlugin : Plugin<Config>
     {
         base.OnEnabled();
         CustomItem.RegisterItems();
-        new MemagentVaccineItem().Register();
         BreakDoorsFeature.RegisterEvents();
         new TechFeaturesParentCommand().LoadGeneratedCommands();
     }
@@ -23,7 +22,6 @@ public class MainPlugin : Plugin<Config>
     {
         base.OnDisabled();
         CustomItem.UnregisterItems();
-        MemagentVaccineItem.Singleton.Unregister();
         BreakDoorsFeature.UnRegisterEvents();
 
     }

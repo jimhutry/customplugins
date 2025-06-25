@@ -79,7 +79,11 @@ public class MedicineFeatures : CustomItem
     protected override void OnChanging(ChangingItemEventArgs ev)
     {
         base.OnChanging(ev);
-        UsageOfKit.TryAdd(ev.Item.Serial, 3);
+        if (!UsageOfKit.ContainsKey(ev.Item.Serial))
+        {
+            UsageOfKit.Add(ev.Item.Serial, 3);
+
+        }
         switch (UsageOfKit[ev.Item.Serial])
         {
             case 3:
@@ -200,7 +204,11 @@ public class MedicineFeatures : CustomItem
     {
         
         if (!Check(ev.Item)) return;
-        UsageOfKit.TryAdd(ev.Item.Serial, 3);
+        if (!UsageOfKit.ContainsKey(ev.Item.Serial))
+        {
+            UsageOfKit.Add(ev.Item.Serial, 3);
+
+        }
         UsageOfKit[ev.Item.Serial]--;
         ev.IsAllowed = false;
         ev.Player.Heal(75);
