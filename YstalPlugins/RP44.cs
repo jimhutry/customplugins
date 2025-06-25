@@ -196,12 +196,15 @@ public class TempV : CustomItem
     {
         base.SubscribeEvents();
         PlayerEvents.UsingItemCompleted += OnUse;
+        PlayerEvents.ChangingRole += OnCh;
     }
 
     protected override void UnsubscribeEvents()
     {
         base.UnsubscribeEvents();
         PlayerEvents.UsingItemCompleted -= OnUse;
+        PlayerEvents.ChangingRole -= OnCh;
+
     }
 
     protected override void ShowPickedUpMessage(Player player) { }
@@ -232,6 +235,11 @@ public class TempV : CustomItem
         Log.Warn("1");
     }
 
+    private void OnCh(ChangingRoleEventArgs ev)
+    {
+        Timing.KillCoroutines(nameof(TempV));
+    }
+    
     private void OnUse(UsingItemCompletedEventArgs ev)
     {
         if (!Check(ev.Item)) return;
@@ -242,10 +250,13 @@ public class TempV : CustomItem
 
     private IEnumerator<float> RegenerationCorountine(Player plr)
     {
-        for (var j = 0; j <= 220; j++)
+        for (var j = 0; j <= 20; j++)
         {
-            plr.Heal(2.5f);
-            yield return Timing.WaitForSeconds(1f);
+            for (int i = 0; i <= 5; i++)
+            {
+                plr.Heal(5f);
+                yield return Timing.WaitForSeconds(0.2f);
+            }
         }
     }
 }
@@ -281,15 +292,12 @@ public class PolymericArmor : CustomArmor
     protected override void OnAcquired(Player player, Item item, bool displayMessage)
     {
         base.OnAcquired(player, item, displayMessage);
-        if (_putons.ContainsKey(item.Serial) && _putons[item.Serial])
-        {
-            return;
-        }
-        player.SessionVariables.Add("polymeric", item.Serial);
-        _putons[item.Serial] = false;
+        player.SessionVariables.Add("polymeric", true);
         player.MaxHumeShield = 20f;
         Timing.KillCoroutines(nameof(PolymericArmor) + "2");
         Timing.RunCoroutine(RegenerationCoroutine(player), nameof(PolymericArmor));
+        player.ShowHint($"<size=44>Вы подобрали\n<color=#757148>\uf1cd{_anothername}</color></size>",
+            3, DrawUIComponent.HintPosition.CENTER, nameof(PolymericArmor));
     }
 
     protected override void ShowPickedUpMessage(Player player) { }
@@ -298,8 +306,7 @@ public class PolymericArmor : CustomArmor
     protected override void OnPickingUp(PickingUpItemEventArgs ev)
     {
         base.OnPickingUp(ev);
-        ev.Player.ShowHint($"<size=44>Вы подобрали\n<color=#757148>\uf1cd{_anothername}</color></size>",
-            3, DrawUIComponent.HintPosition.CENTER, nameof(PolymericArmor));
+        
     }
     protected override void OnDroppingItem(DroppingItemEventArgs ev)
     {
@@ -332,16 +339,13 @@ public class PolymericArmor : CustomArmor
 
     private void OnHurt(HurtEventArgs ev)
     {
-        var b = ev.Player.SessionVariables.TryGetValue("polymeric", out var polymeric);
-        if (b)
-        {
-            if (ev.Player.HumeShield == 0 && _putons[(ushort) polymeric] == false)
+        
+            if (ev.Player.HumeShield == 0 && ev.Player.SessionVariables["polymeric"] == true)
             {
                 Timing.KillCoroutines(nameof(PolymericArmor));
                 Timing.RunCoroutine(DestroyHumeShield(ev.Player), nameof(PolymericArmor) + "2");
                 _putons[(ushort) polymeric] = true;
             } 
-        }
     }
     
     private IEnumerator<float> RegenerationCoroutine(Player plr)
