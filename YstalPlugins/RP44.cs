@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using CustomPlayerEffects;
 using Exiled.API.Features.Attributes;
 using Exiled.API.Features.Items;
@@ -232,7 +233,6 @@ public class TempV : CustomItem
         base.OnDroppingItem(ev);
         ev.Player.ShowHint($"<size=44>Вы выбросили\n<color=#1000ba>\uf492{this.Name}</color></size>", 3,
             DrawUIComponent.HintPosition.CENTER, nameof(TempV));
-        Log.Warn("1");
     }
 
     private void OnCh(ChangingRoleEventArgs ev)
@@ -245,7 +245,7 @@ public class TempV : CustomItem
         if (!Check(ev.Item)) return;
         ev.IsAllowed = false;
         ev.Usable.Destroy();
-        Timing.RunCoroutine(RegenerationCorountine(ev.Player), nameof(TempV));
+        Timing.RunCoroutine(RegenerationCorountine(ev.Player), Segment.RealtimeUpdate, nameof(TempV));
     }
 
     private IEnumerator<float> RegenerationCorountine(Player plr)
@@ -275,7 +275,6 @@ public class PolymericArmor : CustomArmor
     protected override void SubscribeEvents()
     {
         base.SubscribeEvents();
-        PlayerEvents.DroppingItem += OnDrop;
         PlayerEvents.ItemRemoved += OnRemove;
         PlayerEvents.Hurt += OnHurt;
     }
@@ -283,45 +282,45 @@ public class PolymericArmor : CustomArmor
     protected override void UnsubscribeEvents()
     {
         base.UnsubscribeEvents();
-        PlayerEvents.DroppingItem -= OnDrop;
         PlayerEvents.ItemRemoved -= OnRemove;
         PlayerEvents.Hurt -= OnHurt;
     }
 
-    
+
     protected override void OnAcquired(Player player, Item item, bool displayMessage)
     {
         base.OnAcquired(player, item, displayMessage);
-        player.SessionVariables.Add("polymeric", true);
-        player.MaxHumeShield = 20f;
-        Timing.KillCoroutines(nameof(PolymericArmor) + "2");
-        Timing.RunCoroutine(RegenerationCoroutine(player), nameof(PolymericArmor));
-        player.ShowHint($"<size=44>Вы подобрали\n<color=#757148>\uf1cd{_anothername}</color></size>",
-            3, DrawUIComponent.HintPosition.CENTER, nameof(PolymericArmor));
+        if (!player.SessionVariables.ContainsKey("polymeric"))
+        {
+            player.SessionVariables.Add("polymeric", item.Serial);
+        }
+
+        if (!_putons.ContainsKey(item.Serial))
+        {
+            _putons.Add(item.Serial, false);
+        }
+        if (!_putons[item.Serial])
+        {
+            player.MaxHumeShield = 30;
+            Timing.KillCoroutines(nameof(PolymericArmor) + "2");
+            Timing.RunCoroutine(RegenerationCoroutine(player), Segment.RealtimeUpdate, nameof(PolymericArmor));
+            player.ShowHint($"<size=44>Вы подобрали\n<color=#757148>\uf1cd{_anothername}</color></size>",
+                3, DrawUIComponent.HintPosition.CENTER, nameof(PolymericArmor));
+        }
     }
 
     protected override void ShowPickedUpMessage(Player player) { }
     protected override void ShowSelectedMessage(Player player) { }
     
-    protected override void OnPickingUp(PickingUpItemEventArgs ev)
-    {
-        base.OnPickingUp(ev);
-        
-    }
     protected override void OnDroppingItem(DroppingItemEventArgs ev)
     {
         base.OnDroppingItem(ev);
         ev.Player.ShowHint($"<size=44>Вы выбросили\n<color=#757148>\uf1cd{_anothername}</color></size>", 3,
             DrawUIComponent.HintPosition.CENTER, nameof(PolymericArmor));
-    }
-
-    private void OnDrop(DroppingItemEventArgs ev)
-    {
-        if (!Check(ev.Item)) return;
-        if (_putons.ContainsKey(ev.Item.Serial) && _putons[ev.Item.Serial] == false)
+        if (_putons[ev.Item.Serial] == false)
         {
             Timing.KillCoroutines(nameof(PolymericArmor));
-            Timing.RunCoroutine(DestroyHumeShield(ev.Player), nameof(PolymericArmor) + "2");
+            Timing.RunCoroutine(DestroyHumeShield(ev.Player), Segment.RealtimeUpdate, nameof(PolymericArmor) + "2");
         }
         ev.Player.SessionVariables.Remove("polymeric");
     }
@@ -329,28 +328,28 @@ public class PolymericArmor : CustomArmor
     private void OnRemove(ItemRemovedEventArgs ev)
     {
         if (!Check(ev.Item)) return;
-        if (_putons.ContainsKey(ev.Item.Serial) && _putons[ev.Item.Serial] == false)
+        if (_putons[ev.Item.Serial] == false)
         {
             Timing.KillCoroutines(nameof(PolymericArmor));
-            Timing.RunCoroutine(DestroyHumeShield(ev.Player), nameof(PolymericArmor) + "2");
+            Timing.RunCoroutine(DestroyHumeShield(ev.Player), Segment.RealtimeUpdate, nameof(PolymericArmor) + "2");
         }
         ev.Player.SessionVariables.Remove("polymeric");
     }
 
     private void OnHurt(HurtEventArgs ev)
     {
-        
-            if (ev.Player.HumeShield == 0 && ev.Player.SessionVariables["polymeric"] == true)
-            {
-                Timing.KillCoroutines(nameof(PolymericArmor));
-                Timing.RunCoroutine(DestroyHumeShield(ev.Player), nameof(PolymericArmor) + "2");
-                _putons[(ushort) polymeric] = true;
-            } 
+        if (ev.Player.HumeShield == 0 && ev.Player.SessionVariables.ContainsKey("polymeric"))
+        {
+            _putons[(ushort) ev.Player.SessionVariables["polymeric"]] = true;
+            Timing.KillCoroutines(nameof(PolymericArmor));
+            Timing.RunCoroutine(DestroyHumeShield(ev.Player), Segment.RealtimeUpdate, nameof(PolymericArmor) + "2");
+            Timing.RunCoroutine(UntilRegenCoroutine(ev.Player, (ushort) ev.Player.SessionVariables["polymeric"]), Segment.RealtimeUpdate, nameof(PolymericArmor) + "3");
+        } 
     }
     
     private IEnumerator<float> RegenerationCoroutine(Player plr)
     {
-        while (plr.HumeShield < 20)
+        while (plr.HumeShield < 30)
         {
             plr.HumeShield += 1;
             yield return Timing.WaitForSeconds(0.3f);
@@ -363,7 +362,20 @@ public class PolymericArmor : CustomArmor
         while (player.HumeShield > 0)
         {
             player.HumeShield -= 1;
-            yield return Timing.WaitForSeconds(0.3f);
+            yield return Timing.WaitForSeconds(0.15f);
+        }
+    }
+
+    private IEnumerator<float> UntilRegenCoroutine(Player plr, ushort ser)
+    {
+        for (var i = 0; i < 5; i++)
+        {
+            yield return Timing.WaitForSeconds(1f);
+        }
+        _putons[ser] = false;
+        if (plr.SessionVariables.ContainsKey("polymeric"))
+        {
+            Timing.RunCoroutine(RegenerationCoroutine(plr));
         }
     }
 }
