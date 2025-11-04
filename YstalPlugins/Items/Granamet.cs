@@ -5,6 +5,7 @@ using Exiled.API;
 using Exiled.API.Features.Attributes;
 using Exiled.API.Features.Items;
 using Exiled.API.Features.Pickups;
+using Exiled.API.Features.Pickups.Projectiles;
 using Exiled.API.Features.Spawn;
 using Exiled.CustomItems.API;
 using Exiled.CustomItems.API.Features;
@@ -15,6 +16,25 @@ using MEC;
 using UnityEngine;
 
 namespace EgorPlugin;
+
+public class ExplosionComponent : MonoBehaviour
+{
+    public ExplosionGrenadeProjectile Grenade {get; set;}
+    public bool IsActive { get; set; }
+
+    public void Start()
+    {
+        Timing.CallDelayed(0.15f, () => IsActive = true);
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if (!IsActive) return;
+        Grenade.Explode();
+        Destroy(this);
+    }
+}
+
 
 [CustomItem(ItemType.GunShotgun)]
 public class GrenadeLauncherItem : CustomWeapon

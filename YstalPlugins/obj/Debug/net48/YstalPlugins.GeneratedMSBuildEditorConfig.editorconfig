@@ -1,5 +1,5 @@
 is_global = true
-build_property.RootNamespace = ClassLibrary2
+build_property.RootNamespace = YstalPlugins
 build_property.ProjectDir = C:\Users\Admin\OneDrive\Документы\GitHub\customplugins\YstalPlugins\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

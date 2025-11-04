@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.8": {
-      "ExMod.Exiled/9.6.1": {
+      "ExMod.Exiled/9.10.1": {
         "type": "package",
         "compile": {
           "lib/net48/Assembly-CSharp-Publicized.dll": {},
@@ -73,18 +73,44 @@
             "related": ".xml"
           }
         }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "YamlDotNet/12.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net47/YamlDotNet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net47/YamlDotNet.dll": {
+            "related": ".xml"
+          }
+        }
       }
     }
   },
   "libraries": {
-    "ExMod.Exiled/9.6.1": {
-      "sha512": "Wo5VFj/tZjQYCi4nhXoBFO6CXGG5gPfESMR4PcsIK/MOqcurLxwJNi8dOUX5sRO8Pwt+hEbW+4Qw7Q8UyBT6RQ==",
+    "ExMod.Exiled/9.10.1": {
+      "sha512": "yOeb0F7agUqghd06Jzd4DCFVlwyIBF4bkApJDrwseWdlylya8y7NejqAHKCwxQYRFaD4XrdFj/V24ytYQyMVpQ==",
       "type": "package",
-      "path": "exmod.exiled/9.6.1",
+      "path": "exmod.exiled/9.10.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "exmod.exiled.9.6.1.nupkg.sha512",
+        "exmod.exiled.9.10.1.nupkg.sha512",
         "exmod.exiled.nuspec",
         "images/Exiled_Icon.png",
         "lib/net48/Assembly-CSharp-Publicized.dll",
@@ -136,12 +162,69 @@
         "lib/netcoreapp3.1/0Harmony.dll",
         "lib/netcoreapp3.1/0Harmony.xml"
       ]
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "YamlDotNet/12.0.2": {
+      "sha512": "IFj2oDZYJIv5sM8mqaj5edVrpgUyoXk/wCGqZQJrgys/0tBajajpjRSgFM+iA/9ILOfTsPYKtcDcwvqBnBcNIg==",
+      "type": "package",
+      "path": "yamldotnet/12.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "images/yamldotnet.png",
+        "lib/net35/YamlDotNet.dll",
+        "lib/net35/YamlDotNet.xml",
+        "lib/net45/YamlDotNet.dll",
+        "lib/net45/YamlDotNet.xml",
+        "lib/net47/YamlDotNet.dll",
+        "lib/net47/YamlDotNet.xml",
+        "lib/net6.0/YamlDotNet.dll",
+        "lib/net6.0/YamlDotNet.xml",
+        "lib/netstandard2.0/YamlDotNet.dll",
+        "lib/netstandard2.0/YamlDotNet.xml",
+        "lib/netstandard2.1/YamlDotNet.dll",
+        "lib/netstandard2.1/YamlDotNet.xml",
+        "yamldotnet.12.0.2.nupkg.sha512",
+        "yamldotnet.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.8": [
-      "ExMod.Exiled >= 9.6.1",
-      "Lib.Harmony >= 2.2.2"
+      "ExMod.Exiled >= 9.10.1",
+      "Lib.Harmony >= 2.2.2",
+      "Newtonsoft.Json >= 13.0.3",
+      "YamlDotNet >= 12.0.2"
     ]
   },
   "packageFolders": {
@@ -196,11 +279,19 @@
         "dependencies": {
           "ExMod.Exiled": {
             "target": "Package",
-            "version": "[9.6.1, )"
+            "version": "[9.10.1, )"
           },
           "Lib.Harmony": {
             "target": "Package",
             "version": "[2.2.2, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          },
+          "YamlDotNet": {
+            "target": "Package",
+            "version": "[12.0.2, )"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"

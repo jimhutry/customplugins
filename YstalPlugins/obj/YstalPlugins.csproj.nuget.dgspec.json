@@ -52,11 +52,19 @@
           "dependencies": {
             "ExMod.Exiled": {
               "target": "Package",
-              "version": "[9.6.1, )"
+              "version": "[9.10.1, )"
             },
             "Lib.Harmony": {
               "target": "Package",
               "version": "[2.2.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "YamlDotNet": {
+              "target": "Package",
+              "version": "[12.0.2, )"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"

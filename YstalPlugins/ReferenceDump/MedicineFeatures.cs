@@ -13,11 +13,12 @@ using Exiled.CustomItems.API.Features;
 using Exiled.Events.EventArgs.Player;
 using MEC;
 using UnityEngine;
+using PlayerEvents = Exiled.Events.Handlers.Player;
 using HUD;
 using Item = Exiled.API.Features.Items.Item;
 using Pickup = Exiled.API.Features.Pickups.Pickup;
 
-namespace EgorPlugin;
+namespace ClassLibrary2;
 
 [CustomItem(ItemType.Medkit)]
 public class MedicineFeatures : CustomItem
@@ -51,6 +52,7 @@ public class MedicineFeatures : CustomItem
         PlayerEvents.UsingItem += OnUsingItem;
         PlayerEvents.CancellingItemUse += OnCancel;
         PlayerEvents.UsedItem += OnUsedDItem;
+
     }
 
     protected override void UnsubscribeEvents()
@@ -79,11 +81,7 @@ public class MedicineFeatures : CustomItem
     protected override void OnChanging(ChangingItemEventArgs ev)
     {
         base.OnChanging(ev);
-        if (!UsageOfKit.ContainsKey(ev.Item.Serial))
-        {
-            UsageOfKit.Add(ev.Item.Serial, 3);
-
-        }
+        UsageOfKit.TryAdd(ev.Item.Serial, 3);
         switch (UsageOfKit[ev.Item.Serial])
         {
             case 3:
@@ -204,11 +202,7 @@ public class MedicineFeatures : CustomItem
     {
         
         if (!Check(ev.Item)) return;
-        if (!UsageOfKit.ContainsKey(ev.Item.Serial))
-        {
-            UsageOfKit.Add(ev.Item.Serial, 3);
-
-        }
+        UsageOfKit.TryAdd(ev.Item.Serial, 3);
         UsageOfKit[ev.Item.Serial]--;
         ev.IsAllowed = false;
         ev.Player.Heal(75);
@@ -222,6 +216,7 @@ public class MedicineFeatures : CustomItem
         }
         if (UsageOfKit[ev.Item.Serial] != 0) return;
         ev.Player.ShowHint("Вы израсходовали все медикаменты.", 3f, DrawUIComponent.HintPosition.CENTER, nameof(MedicineFeatures));
+        Log.Info("Удаление предмета");
         ev.Item.Destroy();
         UsageOfKit.Remove(ev.Item.Serial);        
     }

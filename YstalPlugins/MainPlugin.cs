@@ -9,20 +9,15 @@ public class MainPlugin : Plugin<Config>
 {
     public override string Name { get; } = "даунскийплагин";
     public override string Author { get; } = "егор";
-    public BreakDoorsFeature BreakDoorsFeature { get; set; } = new();
     public override void OnEnabled()
     {
         base.OnEnabled();
         CustomItem.RegisterItems();
-        BreakDoorsFeature.RegisterEvents();
-        new TechFeaturesParentCommand().LoadGeneratedCommands();
     }
 
     public override void OnDisabled()
     {
         base.OnDisabled();
         CustomItem.UnregisterItems();
-        BreakDoorsFeature.UnRegisterEvents();
-
     }
 }
