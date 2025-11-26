@@ -33,4 +33,9 @@
         <Reference Include="UnityEngine.CoreModule" HintPath="$(EXILED_References)\UnityEngine.CoreModule.dll" />
         <Reference Include="UnityEngine.PhysicsModule" HintPath="$(EXILED_References)\UnityEngine.PhysicsModule.dll" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Utilities\SpecialHumanoidEntity\GreenType\" />
+      <Folder Include="Utilities\SpecialHumanoidEntity\GreyEntity\" />
+    </ItemGroup>
 </Project>
