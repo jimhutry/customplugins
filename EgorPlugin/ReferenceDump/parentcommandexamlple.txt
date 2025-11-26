@@ -1,0 +1,58 @@
+using CommandSystem;
+using Exiled.Permissions.Extensions;
+using NorthwoodLib;
+using Scp963.Features;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Scp963.Commands
+{
+    [CommandHandler(typeof(RemoteAdminCommandHandler))]
+    public class Scp963Parent : ParentCommand
+    {
+        public Scp963Parent() => LoadGeneratedCommands();
+
+        public override string Command => "scp963";
+
+        public override string[] Aliases => Array.Empty<string>();
+
+        public override string Description => "Управление SCP-963.";
+
+        private List<ICommand> _subCommands = new List<ICommand>()
+        {
+            new Scp963Set()
+        };
+
+        public override void LoadGeneratedCommands()
+        {
+            foreach (var command in _subCommands)
+            {
+                RegisterCommand(command);
+            }
+        }
+
+        protected override bool ExecuteParent(ArraySegment<string> arguments, ICommandSender sender, out string response)
+        {
+            if (!sender.CheckPermission("rp.playerutils"))
+            {
+                response = "Нет прав.";
+                return false;
+            }
+
+            StringBuilder sb = new($"<b>Игрок, заточённый в SCP-963 на данный момент:</b> {(Scp963Item.Owner == null ? "отсутствует" : Scp963Item.Owner.ReferenceHub.LoggedNameFromRefHub())}\n" +
+                $"<b>Суб-команды:</b>");
+
+            foreach(var command in _subCommands)
+            {
+                sb.Append($"<i>scp963 {command.Command}</i> - {command.Description}\n");
+            }
+
+            response = sb.ToString().Trim();
+            return true;
+        }
+    }
+}
