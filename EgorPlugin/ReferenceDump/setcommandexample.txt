@@ -1,0 +1,94 @@
+using CommandSystem;
+using Exiled.API.Features;
+using Exiled.API.Features.Roles;
+using Exiled.Permissions.Extensions;
+using Scp963.Features;
+using System;
+
+namespace Scp963.Commands
+{
+    public class Scp963Set : ICommand, IUsageProvider, IHelpProvider
+    {
+        public string Command => "set";
+
+        public string[] Aliases => Array.Empty<string>();
+
+        public string Description => "Установить нового владельца бессмертия.";
+
+        public string[] Usage => new[] { "player_id / null" };
+
+        public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
+        {
+            if (!sender.CheckPermission("rp.playerutils"))
+            {
+                response = "Нет прав.";
+                return false;
+            }
+
+            if (arguments.Count < 1)
+            {
+                response = GetHelp(arguments);
+                return true;
+            }
+
+            if (!int.TryParse(arguments.At(0), out int id)) 
+            {
+                response = GetHelp(arguments);
+                
+                if(arguments.At(0) == "null")
+                {
+                    if(Scp963Item.Owner != null && Scp963Item.Owner.Role.Type == PlayerRoles.RoleTypeId.Overwatch)
+                    {
+                        Scp963Item.Owner.Role.Set(PlayerRoles.RoleTypeId.Spectator);
+                    }
+
+                    Scp963Item.Owner = null;
+                    response = "Заточённый освобождён (если он вообще был).";
+                }
+
+                return true;
+            }
+
+            var player = Player.Get(id);
+
+            if(player == null)
+            {
+                response = $"Игрок под идентификатором <b>{id}</b> не найден!";
+                return false;
+            }
+
+            if(player.Role is not HumanRole && player.Role is not SpectatorRole) 
+            {
+                response = $"Команда применима только на игроках человеческого класса или на наблюдателях.";
+                return false;
+            }
+
+            SetOwner(player);
+
+            response = $"В качестве обладателя бессмертия установлен: <b>{player.ReferenceHub.LoggedNameFromRefHub()}</b>";
+            return true;
+        }
+
+        public string GetHelp(ArraySegment<string> arguments)
+        {
+            return $"<b>Помощь по использованию:</b> scp963 set {this.DisplayCommandUsage()}";
+        }
+
+        private void SetOwner(Player player)
+        {
+            Scp963Item.Owner = player;
+
+            switch (player.Role.Type)
+            {
+                case PlayerRoles.RoleTypeId.Overwatch:
+                    break;
+                case PlayerRoles.RoleTypeId.Spectator:
+                    player.Role.Set(PlayerRoles.RoleTypeId.Overwatch);
+                    break;
+                default:
+                    player.CustomInfo = "На груди золотой амулет с рубином. " + player.CustomInfo;
+                    break;
+            }
+        }
+    }
+}

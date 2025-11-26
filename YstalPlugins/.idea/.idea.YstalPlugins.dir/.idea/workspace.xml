@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="de8ad7c4-4b59-4b20-870f-3313d8e702c9" name="Changes" comment="final update of items">
+      <change afterPath="$PROJECT_DIR$/../EgorPlugin/EgorPlugin.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EgorPlugin/ReferenceDump/parentcommandexamlple.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EgorPlugin/ReferenceDump/setcommandexample.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EgorPlugin/Utilites/SpecialEntity/OperationalSpecialEntity/Coroutine/RedTypeCoroutines.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EgorPlugin/Utilites/SpecialEntity/OperationalSpecialEntity/Enums/SpecialEntityType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EgorPlugin/Utilites/SpecialEntity/OperationalSpecialEntity/ParentSpecialEntityCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EgorPlugin/Utilites/SpecialEntity/OperationalSpecialEntity/RemoveSpecialEntityCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EgorPlugin/Utilites/SpecialEntity/OperationalSpecialEntity/SetSpecialEntityCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net48/YstalPlu.57917980.Up2Date" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net48/YstalPlugins.AssemblyInfoInputs.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net48/YstalPlugins.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EgorPlugin/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YstalPlugins.dir/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/.idea/.idea.YstalPlugins.dir/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YstalPlugins.dir/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/.idea/.idea.YstalPlugins.dir/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YstalPlugins.dir/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/.idea/.idea.YstalPlugins.dir/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/Config.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Folder.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/Folder.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Globalusings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/Globalusings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Items/Granamet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/Items/Granamet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Items/RP44.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/Items/RP44.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainPlugin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/MainPlugin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Minigame.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/Minigame.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReferenceDump/MedicineFeatures.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/ReferenceDump/MedicineFeatures.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utilites/ParentSpecialEntityCommand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utilites/SpecialEntity/Enums/SpecialEntityType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YstalPlugins.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/0Harmony.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/0Harmony.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Assembly-CSharp-Publicized.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Assembly-CSharp-Publicized.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Assembly-CSharp-firstpass.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Assembly-CSharp-firstpass.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/CommandSystem.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/CommandSystem.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/EventsUtils.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/EventsUtils.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Exiled.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Exiled.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Exiled.CreditTags.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Exiled.CreditTags.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Exiled.CustomItems.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Exiled.CustomItems.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Exiled.CustomRoles.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Exiled.CustomRoles.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Exiled.Events.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Exiled.Events.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Exiled.Loader.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Exiled.Loader.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Exiled.Permissions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Exiled.Permissions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/HUD.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/HUD.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/LabApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/LabApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/MapEditorReborn.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/MapEditorReborn.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Mirror.Components.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Mirror.Components.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Mirror.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Mirror.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Newtonsoft.Json.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Newtonsoft.Json.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/NorthwoodLib.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/NorthwoodLib.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/Pooling.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/Pooling.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/ProjectMER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/ProjectMER.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/UnityEngine.AnimationModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/UnityEngine.AnimationModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/UnityEngine.CoreModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/UnityEngine.CoreModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/UnityEngine.PhysicsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/UnityEngine.PhysicsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/YamlDotNet.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/YamlDotNet.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/YstalPlugins.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net48/dt04tT4.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/dt04tT4.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net48/.NETFramework,Version=v4.8.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net48/.NETFramework,Version=v4.8.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net48/YstalPlu.57917980.Up2Date" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/Utilites/SpecialEntity/RedType/RedTypeAbility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net48/YstalPlugins.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net48/YstalPlugins.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net48/YstalPlugins.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net48/YstalPlugins.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net48/YstalPlugins.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net48/YstalPlugins.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net48/YstalPlugins.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net48/YstalPlugins.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net48/YstalPlugins.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net48/YstalPlugins.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net48/YstalPlugins.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net48/YstalPlugins.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net48/YstalPlugins.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net48/YstalPlugins.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/bin/Debug/net48/EgorPlugin.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net48/YstalPlugins.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net48/YstalPlugins.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/YstalPlugins.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net9.0/YstalPlugins.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/YstalPlugins.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net9.0/YstalPlugins.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/YstalPlugins.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net9.0/YstalPlugins.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/YstalPlugins.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net9.0/YstalPlugins.GlobalUsings.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/YstalPlugins.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/Debug/net9.0/YstalPlugins.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/YstalPlugins.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/YstalPlugins.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/YstalPlugins.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/YstalPlugins.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/YstalPlugins.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/YstalPlugins.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../EgorPlugin/obj/rider.project.model.nuget.info" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/067dab85799543e2a9ad372ac2388b8219c00/6f/700320f6/ObjectSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/079d2397732c4fcaa434b7fde80d87647c00/62/ef5e9385/Minigame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6869b1608d104370ab4484f8f699b3fc1b5cb8/32/44e9e6a9/Quaternion.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9976084732644cd7abf99fda2bbe2569b6e00/81/6bb11bd6/SudzhaObstacleTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9976084732644cd7abf99fda2bbe2569b6e00/fe/6d432c79/SudzhaObstacle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c7ae81c609da43428fa5251cc74b01005e00/97/fd1f3493/Permissions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f2b6204eed6b41348236173e8a2f539817a880/ab/9c121ef9/HashSet`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/b793b07df39e4444a9511e1729e014e693200/21/699855f9/Exiled.API.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Config.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Utilites/SpecialEntity/OperationalSpecialEntity/SetSpecialEntityCommand.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2z5KezDXRMQkoaM1pJHReN0eDJK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/OneDrive/Документы/GitHub/customplugins/YstalPlugins&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="useMixedMode" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="de8ad7c4-4b59-4b20-870f-3313d8e702c9" name="Changes" comment="" />
+      <created>1751015592788</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751015592788</updated>
+      <workItem from="1751015593892" duration="5812000" />
+      <workItem from="1751630426762" duration="9098000" />
+      <workItem from="1751960455760" duration="8362000" />
+      <workItem from="1752159226472" duration="2997000" />
+      <workItem from="1752743169974" duration="2221000" />
+      <workItem from="1752764241527" duration="610000" />
+      <workItem from="1757606133357" duration="1154000" />
+      <workItem from="1757741684571" duration="1075000" />
+      <workItem from="1757857644470" duration="58000" />
+      <workItem from="1757858587608" duration="5230000" />
+      <workItem from="1758040297370" duration="4621000" />
+      <workItem from="1758308440771" duration="668000" />
+      <workItem from="1758633591305" duration="624000" />
+      <workItem from="1758809148554" duration="412000" />
+      <workItem from="1758950337278" duration="5966000" />
+      <workItem from="1759128070471" duration="2376000" />
+      <workItem from="1760360583831" duration="3238000" />
+      <workItem from="1760630590945" duration="2516000" />
+      <workItem from="1761326568758" duration="860000" />
+      <workItem from="1761643243029" duration="1528000" />
+      <workItem from="1762273583386" duration="5806000" />
+      <workItem from="1762877647082" duration="1355000" />
+      <workItem from="1762952704690" duration="97000" />
+      <workItem from="1763050551635" duration="185000" />
+      <workItem from="1763050863262" duration="1953000" />
+      <workItem from="1763303511689" duration="493000" />
+    </task>
+    <task id="LOCAL-00001" summary="final update of items">
+      <option name="closed" value="true" />
+      <created>1751023880174</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751023880174</updated>
+    </task>
+    <task id="LOCAL-00002" summary="final update of items">
+      <option name="closed" value="true" />
+      <created>1762274929277</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762274929277</updated>
+    </task>
+    <task id="LOCAL-00003" summary="final update of items">
+      <option name="closed" value="true" />
+      <created>1762278459531</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762278459531</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="final update of items" />
+    <option name="LAST_COMMIT_MESSAGE" value="final update of items" />
+  </component>
+</project>
