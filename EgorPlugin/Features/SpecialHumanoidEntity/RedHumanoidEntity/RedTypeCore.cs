@@ -62,6 +62,7 @@ public class RedTypeCore
                         RedType[player] = power;
                         player.MaxHealth += 905;
                         // отключить реал урон
+                        player.GameObject.AddComponent<RedRegenerationComponent>();
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(power), power, null);
